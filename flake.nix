@@ -43,6 +43,11 @@
             username = "ale_tmp";
             homeDirectory = "/home/ale_tmp";
           };
+          "ale" = mkHomeConfiguration {
+            system = "x86_64-linux";
+            username = "ale";
+            homeDirectory = "/home/ale";
+          };
         };
       };
 }
