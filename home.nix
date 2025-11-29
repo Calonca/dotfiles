@@ -48,6 +48,7 @@
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
     # ".screenrc".source = dotfiles/screenrc;
+    ".config/nvim/lua/config/options.lua".source = nvim/lua/config/options.lua;
     
 
     # # You can also set the file content immediately.
