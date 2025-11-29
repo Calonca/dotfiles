@@ -21,4 +21,4 @@ After this you can use the update command
 ~/.config/nix/user_specific/additional_functions.sh
 ```
 
-for custom functions 
+for custom functions
