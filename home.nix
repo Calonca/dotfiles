@@ -158,10 +158,20 @@
       theme = "robbyrussell";
     };
 
+    history = {
+      share = true;
+      ignoreDups = true;
+      ignoreAllDups = true;
+      saveNoDups = true;
+      findNoDups = true;
+      ignoreSpace = true;
+      expireDuplicatesFirst = true;
+    };
+
     initContent = ''
     # Set FZF completion trigger after fzf initialization
     export FZF_COMPLETION_TRIGGER="~~"
-    export ZF_COMPLETION_PATH_OPTS="--walker file,dir,follow,hidden"
+    export FZF_COMPLETION_PATH_OPTS="--walker file,dir,follow,hidden"
     export FZF_COMPLETION_DIR_OPTS=" --walker dir,follow"
     
     source ~/.config/nix/additional_functions.sh
