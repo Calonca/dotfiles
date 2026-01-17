@@ -1,0 +1,8 @@
+theme = Catppuccin Mocha
+keybind = performable:ctrl+c=copy_to_clipboard
+keybind = ctrl+v=paste_from_clipboard
+background-blur = true
+background-opacity = 0.8
+confirm-close-surface = false
+keybind = global:super+shift+enter=toggle_quick_terminal
+

@@ -50,6 +50,7 @@
     # ".screenrc".source = dotfiles/screenrc;
     ".config/nvim/lua/config/options.lua".source = nvim/lua/config/options.lua;
     ".config/nvim/init.lua".source = nvim/init.lua;
+    ".config/ghostty/config".source = ghostty/config;
     
 
     # # You can also set the file content immediately.
