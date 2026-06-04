@@ -1,0 +1,4 @@
+# Managed by the dotfiles repo. Mirrors the old home-manager yazi settings.
+# The `y` shell wrapper lives in additional_functions.sh.
+[mgr]
+linemode = "size"
