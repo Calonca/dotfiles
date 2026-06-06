@@ -13,6 +13,13 @@ REPO_DIR="$(cd "$(dirname "$0")" && pwd)"
 # 1. Packages
 # ---------------------------------------------------------------------------
 if command -v dnf >/dev/null 2>&1; then
+  if [ -n "${COPR_REPOS:-}" ]; then
+    echo "==> Enabling COPR repos..."
+    for repo in $COPR_REPOS; do
+      echo "   enabling copr:$repo"
+      sudo dnf copr enable -y "$repo"
+    done
+  fi
   echo "==> Installing packages with dnf..."
   sudo dnf install -y $PACKAGES
 else

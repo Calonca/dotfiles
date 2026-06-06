@@ -1,6 +1,10 @@
 # Editable settings for install.sh. Change things here, not in the installer.
 # This file is sourced by install.sh — it sets shell variables, no logic.
 
+# COPR repos enabled (with `dnf copr enable`) before installing packages.
+# Space-separated owner/project list. Needed for packages not in the main repos.
+COPR_REPOS="lihaohong/yazi"
+
 # Packages installed with dnf.
 PACKAGES="git zsh neovim bat eza fzf zoxide btop tree yazi zsh-autosuggestions zsh-syntax-highlighting"
 

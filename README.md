@@ -47,6 +47,7 @@ replaced. The installer is safe to re-run.
 
 Edit `config.sh`:
 
+- `COPR_REPOS` — COPR repos enabled (`dnf copr enable`) before installing.
 - `PACKAGES` — the dnf package list.
 - `DOTFILES_DIR` — the folder mirrored into `$HOME` (default `dotfiles`).
 - `INSTALL_OH_MY_ZSH`, `SET_DEFAULT_SHELL` — toggles (`1`/`0`).
