@@ -50,7 +50,19 @@ Edit `config.sh`:
 - `COPR_REPOS` — COPR repos enabled (`dnf copr enable`) before installing.
 - `PACKAGES` — the dnf package list.
 - `DOTFILES_DIR` — the folder mirrored into `$HOME` (default `dotfiles`).
-- `INSTALL_OH_MY_ZSH`, `SET_DEFAULT_SHELL` — toggles (`1`/`0`).
+- `INSTALL_OH_MY_ZSH`, `SET_DEFAULT_SHELL`, `INSTALL_NERD_FONT`,
+  `SET_KONSOLE_DEFAULTS` — toggles (`1`/`0`).
+- `KONSOLE_SHORTCUTS` — global shortcuts that open Konsole.
+
+## Konsole
+
+`dotfiles/.local/share/konsole/` holds the **Dev** profile (JetBrainsMono Nerd
+Font, Catppuccin Mocha colors at 80% opacity with blur) and
+`dotfiles/.local/share/kxmlgui5/konsole/` its shortcuts (Ctrl+C / Ctrl+V copy
+and paste, Ctrl+Shift+Tab for the last-used tab). The Dev profile opens zsh in
+the `dev` toolbox. Konsole replaces these symlinks with real files when you
+edit a profile or shortcut in its settings; copy them back into the repo
+afterwards.
 
 ## Updating
 

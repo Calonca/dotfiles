@@ -53,7 +53,31 @@ find "$SRC_DIR" \( -type f -o -type l \) | while IFS= read -r src; do
 done
 
 # ---------------------------------------------------------------------------
-# 4. Default shell
+# 4. Nerd font
+# ---------------------------------------------------------------------------
+FONT_DIR="$HOME/.local/share/fonts/JetBrainsMonoNerdFont"
+if [ "${INSTALL_NERD_FONT:-0}" = "1" ] && [ ! -d "$FONT_DIR" ]; then
+  echo "==> Installing JetBrainsMono Nerd Font..."
+  mkdir -p "$FONT_DIR"
+  curl -fsSL https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.tar.xz \
+    | tar -xJ -C "$FONT_DIR"
+  fc-cache -f "$FONT_DIR" >/dev/null 2>&1 || true
+fi
+
+# ---------------------------------------------------------------------------
+# 5. Konsole defaults (KDE only)
+# ---------------------------------------------------------------------------
+if [ "${SET_KONSOLE_DEFAULTS:-0}" = "1" ] && command -v konsole >/dev/null 2>&1; then
+  echo "==> Setting Konsole's default profile and shortcuts..."
+  # KDE rewrites these files, so they are edited in place, not symlinked.
+  kwriteconfig6 --file konsolerc --group "Desktop Entry" --key DefaultProfile Dev.profile
+  kwriteconfig6 --file kglobalshortcutsrc --group services \
+    --group org.kde.konsole.desktop --key _launch "$KONSOLE_SHORTCUTS"
+  echo "   global shortcuts apply after the next login"
+fi
+
+# ---------------------------------------------------------------------------
+# 6. Default shell
 # ---------------------------------------------------------------------------
 ZSH_BIN="$(command -v zsh || true)"
 if [ "${SET_DEFAULT_SHELL:-0}" = "1" ] && [ -n "$ZSH_BIN" ] \
