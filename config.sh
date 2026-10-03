@@ -18,3 +18,12 @@ INSTALL_OH_MY_ZSH=1
 
 # Make zsh the default login shell (1 = yes, 0 = no).
 SET_DEFAULT_SHELL=1
+
+# Download JetBrainsMono Nerd Font into ~/.local/share/fonts (1 = yes, 0 = no).
+# Konsole's Dev profile uses it.
+INSTALL_NERD_FONT=1
+
+# KDE: make the Dev profile Konsole's default and open Konsole with these
+# global shortcuts (tab-separated).
+SET_KONSOLE_DEFAULTS=1
+KONSOLE_SHORTCUTS="Ctrl+Alt+T	Meta+Return"
